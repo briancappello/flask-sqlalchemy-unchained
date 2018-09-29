@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.2 (unreleased)
+## 0.1.2 (2018/09/29)
 
 - bump required SQLAlchemy-Unchained version
 
