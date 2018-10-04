@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='flask-sqlalchemy-unchained',
-    version='0.2.0',
+    version='0.2.1',
     description='Integrates SQLAlchemy Unchained with Flask',
     author='Brian Cappello',
     license='MIT',
@@ -14,7 +14,7 @@ setup(
     python_requires='>=3.6',
     install_requires=[
         'flask-sqlalchemy>=2.3.1',
-        'sqlalchemy-unchained>=0.3',
+        'sqlalchemy-unchained>=0.3.1',
     ],
     extras_require={
         'dev': [
