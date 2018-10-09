@@ -1,10 +1,16 @@
 from setuptools import setup
 
 
+with open('README.md') as f:
+    long_description = f.read()
+
+
 setup(
     name='flask-sqlalchemy-unchained',
     version='0.2.1',
     description='Integrates SQLAlchemy Unchained with Flask',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Brian Cappello',
     license='MIT',
 
