@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy as BaseSQLAlchemy, BaseQuery as _Query
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.ext.hybrid import hybrid_method, hybrid_property
-from sqlalchemy_unchained import (BaseModel, DeclarativeMeta, ModelRegistry,
+from sqlalchemy_unchained import (BaseModel, DeclarativeMeta, _ModelRegistry,
                                   QueryMixin, declarative_base, foreign_key)
 
 
@@ -16,7 +16,7 @@ class SQLAlchemy(BaseSQLAlchemy):
         super().__init__(app=app, use_native_unicode=use_native_unicode,
                          session_options=session_options, metadata=metadata,
                          query_class=query_class, model_class=model_class)
-        ModelRegistry().register_base_model_class(self.Model)
+        _ModelRegistry().register_base_model_class(self.Model)
 
         self.association_proxy = association_proxy
         self.declared_attr = declared_attr

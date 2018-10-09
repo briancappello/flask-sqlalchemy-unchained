@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.1 (2018/10/09)
+
+- update import statement to reflect the model registry's renaming
+
 ## 0.3.0 (2018/10/09)
 
 - bump required SQLAlchemy-Unchained version
