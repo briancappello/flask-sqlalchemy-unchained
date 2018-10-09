@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.0 (2018/10/09)
+
+- bump required SQLAlchemy-Unchained version
+
 ## 0.2.2 (2018/10/09)
 
 - attempt to fix readme on PyPI
