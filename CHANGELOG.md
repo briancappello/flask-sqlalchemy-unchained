@@ -3,6 +3,7 @@
 ## 0.4.0 (unreleased)
 
 - rename `SQLAlchemy` extension class to `SQLAlchemyUnchained`
+- indicate we are compatible with Python 3.5+
 
 ## 0.3.1 (2018/10/09)
 

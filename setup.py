@@ -17,7 +17,7 @@ setup(
     py_modules=['flask_sqlalchemy_unchained'],
     include_package_data=True,
     zip_safe=False,
-    python_requires='>=3.6',
+    python_requires='>=3.5',
     install_requires=[
         'flask-sqlalchemy>=2.3.1',
         'sqlalchemy-unchained>=0.4.0',
@@ -46,6 +46,8 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
 )
