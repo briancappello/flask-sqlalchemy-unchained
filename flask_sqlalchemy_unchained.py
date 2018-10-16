@@ -1,4 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy as BaseSQLAlchemy, BaseQuery as _Query
+from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy, BaseQuery as _Query
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.ext.hybrid import hybrid_method, hybrid_property
@@ -10,7 +10,7 @@ class BaseQuery(QueryMixin, _Query):
     pass
 
 
-class SQLAlchemy(BaseSQLAlchemy):
+class SQLAlchemyUnchained(_SQLAlchemy):
     def __init__(self, app=None, use_native_unicode=True, session_options=None,
                  metadata=None, query_class=BaseQuery, model_class=BaseModel):
         super().__init__(app=app, use_native_unicode=use_native_unicode,

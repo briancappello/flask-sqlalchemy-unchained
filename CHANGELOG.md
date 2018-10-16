@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.0 (unreleased)
+
+- rename `SQLAlchemy` extension class to `SQLAlchemyUnchained`
+
 ## 0.3.1 (2018/10/09)
 
 - update import statement to reflect the model registry's renaming
