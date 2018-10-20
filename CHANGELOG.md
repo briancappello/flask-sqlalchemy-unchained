@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.4.1 (unreleased)
+## 0.4.1 (2018/10/20)
 
 - require sqlalchemy-unchained >= 0.5.1
 
