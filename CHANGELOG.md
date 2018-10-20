@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.1 (unreleased)
+
+- require sqlalchemy-unchained >= 0.5.1
+
 ## 0.4.0 (2018/10/16)
 
 - rename `SQLAlchemy` extension class to `SQLAlchemyUnchained`
