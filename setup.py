@@ -20,7 +20,7 @@ setup(
     python_requires='>=3.5',
     install_requires=[
         'flask-sqlalchemy>=2.3.1',
-        'sqlalchemy-unchained>=0.5.1',
+        'sqlalchemy-unchained>=0.6.0',
     ],
     extras_require={
         'dev': [

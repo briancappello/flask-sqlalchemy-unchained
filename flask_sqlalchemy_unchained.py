@@ -1,13 +1,26 @@
-from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy, BaseQuery as _Query
+from flask_sqlalchemy import (SQLAlchemy as _SQLAlchemy,
+                              BaseQuery as _Query, _QueryProperty)
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.ext.hybrid import hybrid_method, hybrid_property
-from sqlalchemy_unchained import (BaseModel, DeclarativeMeta, QueryMixin,
-                                  declarative_base, foreign_key)
+from sqlalchemy_unchained import (
+    BaseModel as _BaseModel, DeclarativeMeta, QueryMixin as _QueryMixin,
+    SessionManager, ModelManager, declarative_base, foreign_key)
 
 
-class BaseQuery(QueryMixin, _Query):
+class BaseQuery(_QueryMixin, _Query):
     pass
+
+
+class BaseModel(_BaseModel):
+    #: Query class used by :attr:`query`. Defaults to
+    # :class:`SQLAlchemy.Query`, which defaults to :class:`BaseQuery`.
+    query_class = None
+
+    #: Convenience property to query the database for instances of this model
+    # using the current session. Equivalent to ``db.session.query(Model)``
+    # unless :attr:`query_class` has been changed.
+    query = None
 
 
 class SQLAlchemyUnchained(_SQLAlchemy):
@@ -22,7 +35,15 @@ class SQLAlchemyUnchained(_SQLAlchemy):
         self.hybrid_method = hybrid_method
         self.hybrid_property = hybrid_property
 
-    def make_declarative_base(self, model, metadata=None) -> BaseModel:
-        return declarative_base(lambda: self.session(), model=model,
-                                metaclass=DeclarativeMeta, metadata=metadata,
-                                query_class=self.Query)
+        self.SessionManager = SessionManager
+        self.ModelManager = ModelManager
+
+    def make_declarative_base(self, model, metadata=None,
+                              query_class=BaseQuery) -> BaseModel:
+        model = declarative_base(model=model, metadata=metadata)
+
+        if not getattr(model, 'query_class', None):
+            model.query_class = query_class
+        model.query = _QueryProperty(self)
+
+        return model

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.6.0 (unreleased)
+
+- **NOTE:** this package's version number is now synced with sqlalchemy-unchained
+- update to sqlalchemy-unchained v0.6.0
+
 ## v0.4.1 (2018/10/20)
 
 - require sqlalchemy-unchained >= v0.5.1
