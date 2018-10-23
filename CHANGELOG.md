@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.6.1 (2018/10/23)
+
+- update to sqlalchemy-unchained v0.6.1 (`SessionManager` bugfix)
+
 ## v0.6.0 (2018/10/23)
 
 - **NOTE:** this package's version number is now synced with sqlalchemy-unchained
