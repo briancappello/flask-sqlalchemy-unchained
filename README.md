@@ -8,12 +8,12 @@ Integrates [SQLAlchemy Unchained](https://github.com/briancappello/sqlalchemy-un
 # your_app.py
 
 from flask import Flask
-from flask_sqlalchemy_unchained import SQLAlchemy
+from flask_sqlalchemy_unchained import SQLAlchemyUnchained
 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-db = SQLAlchemy(app)
+db = SQLAlchemyUnchained(app)
 
 
 class User(db.Model):
@@ -158,10 +158,10 @@ class TestConfig(BaseConfig):
 # app/extensions.py
 
 from sqlalchemy import MetaData
-from flask_sqlalchemy_unchained import SQLAlchemy
+from flask_sqlalchemy_unchained import SQLAlchemyUnchained
 
 
-db = SQLAlchemy(metadata=MetaData(naming_convention={
+db = SQLAlchemyUnchained(metadata=MetaData(naming_convention={
     'ix': 'ix_%(column_0_label)s',
     'uq': 'uq_%(table_name)s_%(column_0_name)s',
     'ck': 'ck_%(table_name)s_%(constraint_name)s',
