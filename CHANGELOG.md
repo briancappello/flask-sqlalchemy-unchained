@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.6.2 (unreleased)
+## v0.6.2 (2018/10/26)
 
 - make sure to set the session factory with `SessionManager.set_session_factory`
 
