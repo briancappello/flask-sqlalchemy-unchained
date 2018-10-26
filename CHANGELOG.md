@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.6.2 (unreleased)
+
+- make sure to set the session factory with `SessionManager.set_session_factory`
+
 ## v0.6.1 (2018/10/23)
 
 - update to sqlalchemy-unchained v0.6.1 (`SessionManager` bugfix)
