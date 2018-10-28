@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.6.4 (2018/10/28)
+
+- require sqlalchemy-unchained v0.6.4
+
 ## v0.6.3 (2018/10/28)
 
 - require flask-sqlalchemy 2.3.2 and sqlalchemy-unchained v0.6.3, pin versions
