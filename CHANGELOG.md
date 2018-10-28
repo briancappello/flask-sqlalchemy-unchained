@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.6.3 (2018/10/28)
+
+- require flask-sqlalchemy 2.3.2 and sqlalchemy-unchained v0.6.3, pin versions
+
 ## v0.6.2 (2018/10/26)
 
 - make sure to set the session factory with `SessionManager.set_session_factory`
