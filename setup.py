@@ -7,7 +7,7 @@ with open('README.md') as f:
 
 setup(
     name='flask-sqlalchemy-unchained',
-    version='0.6.5',
+    version='0.6.6',
     description='Integrates SQLAlchemy Unchained with Flask',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -20,7 +20,7 @@ setup(
     python_requires='>=3.5',
     install_requires=[
         'flask-sqlalchemy>=2.3.2',
-        'sqlalchemy-unchained>=0.6.5',
+        'sqlalchemy-unchained>=0.6.6',
     ],
     extras_require={
         'dev': [
