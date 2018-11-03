@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.6.7 (2018/11/03)
+
+- require sqlalchemy-unchained v0.6.7
+
 ## v0.6.6 (2018/10/28)
 
 - require sqlalchemy-unchained v0.6.6
