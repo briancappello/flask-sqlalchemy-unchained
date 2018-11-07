@@ -39,6 +39,10 @@ class SQLAlchemyUnchained(_SQLAlchemy):
         self.SessionManager = SessionManager
         self.ModelManager = ModelManager
 
+    def init_app(self, app):
+        app.config.setdefault('SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL', None)
+        super().init_app(app)
+
     def make_declarative_base(self, model, metadata=None,
                               query_class=BaseQuery) -> BaseModel:
         model = declarative_base(model=model, metadata=metadata)
@@ -48,3 +52,12 @@ class SQLAlchemyUnchained(_SQLAlchemy):
         model.query = _QueryProperty(self)
 
         return model
+
+    def apply_driver_hacks(self, app, info, options):
+        super().apply_driver_hacks(app, info, options)
+        isolation_level = app.config.get(
+            'SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL', None)
+        if isolation_level:
+            options['isolation_level'] = isolation_level
+        elif info.drivername.startswith('postgresql'):
+            options.setdefault('isolation_level', 'REPEATABLE READ')
