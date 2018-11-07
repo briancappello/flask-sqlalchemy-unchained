@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.6.8 (unreleased)
+## v0.6.8 (2018/11/07)
 
 - add support for setting the engine-wide transaction `isolation_level` using `app.config.SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL`
 - require sqlalchemy-unchained v0.6.8
