@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.6.9 (unreleased)
+## v0.6.9 (2018/12/01)
 
 - require sqlalchemy-unchained v0.6.9
 - decouple versioning from sqlalchemy-unchained
