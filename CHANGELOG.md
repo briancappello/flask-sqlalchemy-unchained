@@ -3,6 +3,7 @@
 ## v0.6.9 (unreleased)
 
 - require sqlalchemy-unchained v0.6.9
+- decouple versioning from sqlalchemy-unchained
 
 ## v0.6.8 (2018/11/07)
 
