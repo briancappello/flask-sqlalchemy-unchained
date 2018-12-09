@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.7.0 (unreleased)
+
+- do not export SessionManager or ModelManager as attributes on the extension instance
+
 ## v0.6.9 (2018/12/01)
 
 - require sqlalchemy-unchained v0.6.9

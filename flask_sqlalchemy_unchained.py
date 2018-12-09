@@ -34,10 +34,7 @@ class SQLAlchemyUnchained(_SQLAlchemy):
         self.foreign_key = foreign_key
         self.hybrid_method = hybrid_method
         self.hybrid_property = hybrid_property
-
         SessionManager.set_session_factory(lambda: self.session())
-        self.SessionManager = SessionManager
-        self.ModelManager = ModelManager
 
     def init_app(self, app):
         app.config.setdefault('SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL', None)
