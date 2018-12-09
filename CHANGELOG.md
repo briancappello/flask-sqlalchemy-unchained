@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.7.0 (unreleased)
+## v0.7.0 (2018/12/09)
 
 - do not export SessionManager or ModelManager as attributes on the extension instance
 
