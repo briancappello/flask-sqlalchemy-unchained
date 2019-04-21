@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.7.2 (2019/04/21)
+
+- bump required `sqlalchemy-unchained` version to 0.7.4
+
 ## v0.7.1 (2019/02/26)
 
 - bump required `sqlalchemy-unchained` version
