@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.7.4 (unreleased)
+## v0.7.4 (2021/05/01)
 
 - add compatibility with Flask-SQLAlchemy 2.5
 
