@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.7.4 (unreleased)
+
+- add compatibility with Flask-SQLAlchemy 2.5
+
 ## v0.7.3 (2019/04/21)
 
 - bump required `sqlalchemy-unchained` version to 0.7.4
