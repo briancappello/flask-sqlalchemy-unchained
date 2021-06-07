@@ -51,7 +51,11 @@ class SQLAlchemyUnchained(_SQLAlchemy):
         return model
 
     def apply_driver_hacks(self, app, info, options):
-        sa_url, options = super().apply_driver_hacks(app, info, options)
+        rv = super().apply_driver_hacks(app, info, options)
+
+        # rv is None with flask-sqlalchemy < 2.5
+        if rv is not None:
+            sa_url, options = rv
 
         isolation_level = app.config.get(
             'SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL', None)
@@ -60,4 +64,6 @@ class SQLAlchemyUnchained(_SQLAlchemy):
         elif info.drivername.startswith('postgresql'):
             options.setdefault('isolation_level', 'REPEATABLE READ')
 
-        return sa_url, options
+        # rv is None with flask-sqlalchemy < 2.5
+        if rv is not None:
+            return sa_url, options
