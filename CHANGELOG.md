@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.7.6 (unreleased)
+
+- do not set a default transaction isolation level for PostgreSQL
+
 ## v0.7.5 (2021/06/07)
 
 - fix compatibility with Flask-SQLAlchemy <=2.4

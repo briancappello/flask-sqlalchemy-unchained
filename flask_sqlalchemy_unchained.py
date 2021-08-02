@@ -57,12 +57,9 @@ class SQLAlchemyUnchained(_SQLAlchemy):
         if rv is not None:
             sa_url, options = rv
 
-        isolation_level = app.config.get(
-            'SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL', None)
+        isolation_level = app.config.get('SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL', None)
         if isolation_level:
             options['isolation_level'] = isolation_level
-        elif info.drivername.startswith('postgresql'):
-            options.setdefault('isolation_level', 'REPEATABLE READ')
 
         # rv is None with flask-sqlalchemy < 2.5
         if rv is not None:

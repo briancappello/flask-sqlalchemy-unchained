@@ -48,22 +48,22 @@ Now let's take a look at using the application factory pattern. Our app's direct
 ```
 ./your-project
 ├── app
-│   ├── models
-│   │   ├── __init__.py
-│   │   └── user.py
-│   ├── services
-│   │   ├── __init__.py
-│   │   ├── model_manager.py
-│   │   └── user_manager.py
-│   ├── __init__.py
-│   ├── config.py
-│   ├── extensions.py
-│   └── factory.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   └── user.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   ├── model_manager.py
+│   │   └── user_manager.py
+│   ├── __init__.py
+│   ├── config.py
+│   ├── extensions.py
+│   └── factory.py
 ├── db
-│   └── dev.sqlite
+│   └── dev.sqlite
 ├── tests
-│   ├── __init__.py
-│   └── test_user.py
+│   ├── __init__.py
+│   └── test_user.py
 ├── autoapp.py
 └── setup.py
 ```
