@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.7.6 (unreleased)
+## v0.7.6 (2021/08/02)
 
 - do not set a default transaction isolation level for PostgreSQL
 
