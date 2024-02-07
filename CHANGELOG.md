@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.8.0 (2024/02/07)
+
+- bump minimum required Python version to 3.10
+- bump minimum required `flask` version to 2.2
+- bump required `flask-sqlalchemy` version to `3.0.x`
+  - only supported SQLAlchemy version is 1.4
+- add `py.typed` for typing support
+- convert to `pyproject.toml`
+- format code with `black`
+
 ## v0.7.6 (2021/08/02)
 
 - do not set a default transaction isolation level for PostgreSQL

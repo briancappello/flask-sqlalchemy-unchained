@@ -221,7 +221,7 @@ class ModelManager:
         db.session.rollback()
 
     def get(self, id) -> db.Model:
-        return db.session.query(self.model).get(int(id))
+        return db.session.get(self.model, id)
 
     def get_by(self, **kwargs) -> db.Model:
         return db.session.query(self.model).filter_by(**kwargs).first()
