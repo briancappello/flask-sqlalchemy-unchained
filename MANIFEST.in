@@ -1,2 +1,0 @@
-include CHANGELOG.md LICENSE README.md requirements.txt setup.cfg
-include *.py
