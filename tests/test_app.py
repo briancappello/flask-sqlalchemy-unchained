@@ -1,6 +1,5 @@
 import pytest
 
-
 from .app import User, UserManager
 
 

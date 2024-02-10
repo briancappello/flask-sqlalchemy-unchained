@@ -3,6 +3,7 @@ import typing as t
 import pytest
 
 from flask import Flask
+
 from flask_sqlalchemy_unchained import SQLAlchemyUnchained
 
 

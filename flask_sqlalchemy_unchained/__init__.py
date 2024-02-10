@@ -5,15 +5,17 @@ from flask_sqlalchemy import SQLAlchemy as _FlaskSQLAlchemy
 from flask_sqlalchemy.model import Model as _FlaskSQLAlchemyModel
 from flask_sqlalchemy.query import Query
 
+from sqlalchemy import MetaData
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.ext.hybrid import hybrid_method, hybrid_property
+from sqlalchemy.orm import Session, scoped_session
 
+from sqlalchemy_unchained import BaseModel as _BaseModel
 from sqlalchemy_unchained import (
-    BaseModel as _BaseModel,
     DeclarativeMeta,
-    SessionManager,
     ModelManager,
+    SessionManager,
     declarative_base,
     foreign_key,
 )
@@ -26,14 +28,14 @@ class BaseModel(_BaseModel, _FlaskSQLAlchemyModel):
 class SQLAlchemyUnchained(_FlaskSQLAlchemy):
     def __init__(
         self,
-        app=None,
+        app: Flask = None,
         *,
-        metadata=None,
-        session_options=None,
-        query_class=Query,
-        model_class=BaseModel,
-        engine_options=None,
-        add_models_to_shell=False,
+        metadata: MetaData | None = None,
+        session_options: dict = None,
+        query_class: t.Type[Query] = Query,
+        model_class: t.Type[BaseModel] | DeclarativeMeta = BaseModel,
+        engine_options: dict = None,
+        add_models_to_shell: bool = False,
     ):
         super().__init__(
             app,
@@ -55,7 +57,7 @@ class SQLAlchemyUnchained(_FlaskSQLAlchemy):
         app.config.setdefault("SQLALCHEMY_TRANSACTION_ISOLATION_LEVEL", None)
         super().init_app(app)
 
-    def create_scoped_session(self, options: dict):
+    def create_scoped_session(self, options: dict) -> scoped_session[Session]:
         return super()._make_scoped_session(options)
 
     def _make_declarative_base(
@@ -75,3 +77,19 @@ class SQLAlchemyUnchained(_FlaskSQLAlchemy):
             options["isolation_level"] = isolation_level
 
         super()._apply_driver_defaults(options=options, app=app)
+
+
+__all__ = [
+    "BaseModel",
+    "DeclarativeMeta",
+    "ModelManager",
+    "Query",
+    "SessionManager",
+    "SQLAlchemyUnchained",
+    "association_proxy",
+    "declarative_base",
+    "declared_attr",
+    "foreign_key",
+    "hybrid_method",
+    "hybrid_property",
+]

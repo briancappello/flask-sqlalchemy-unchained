@@ -1,5 +1,6 @@
 from flask import Flask
-from flask_sqlalchemy_unchained import SQLAlchemyUnchained, ModelManager
+
+from flask_sqlalchemy_unchained import ModelManager, SQLAlchemyUnchained
 
 
 app = Flask(__name__)

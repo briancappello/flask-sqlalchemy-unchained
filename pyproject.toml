@@ -17,6 +17,7 @@ black = "^24.1.1"
 tox = "^4.12.1"
 mypy = "^1.8.0"
 sqlalchemy2-stubs = "^0.0.2a38"
+isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -27,3 +28,26 @@ module = [
     "sqlalchemy.ext.*",
 ]
 ignore_missing_imports = true
+
+[tool.black]
+line-length = 90
+target-version = ['py310']
+preview = true
+
+[tool.isort]
+profile = "black"
+include_trailing_comma = true
+lines_between_types = 1
+lines_after_imports = 2
+multi_line_output = 3
+sections = "FUTURE,STDLIB,THIRDPARTY,FLASK,SQLALCHEMY,FIRSTPARTY,LOCALFOLDER"
+known_flask = [
+    "flask",
+    "flask_sqlalchemy",
+]
+known_sqlalchemy = [
+    "sqlalchemy",
+]
+known_first_party = [
+    "sqlalchemy_unchained",
+]
