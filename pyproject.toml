@@ -1,27 +1,29 @@
-[tool.poetry]
+[project]
 name = "flask-sqlalchemy-unchained"
 version = "0.8.1"
 description = "Integrates SQLAlchemy Unchained with Flask"
-authors = ["Brian Cappello <briancappello@gmail.com>"]
+authors = [{ name = "Brian Cappello", email = "briancappello@gmail.com" }]
+requires-python = ">=3.10,<4"
 readme = "README.md"
 license = "MIT"
+dependencies = [
+    "flask-sqlalchemy>=3.0.0,<4",
+    "sqlalchemy-unchained>=0.14.0,<0.15",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-flask-sqlalchemy = "^3.0.0"
-sqlalchemy-unchained = "^0.14.0"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
-black = "^24.1.1"
-tox = "^4.12.1"
-mypy = "^1.8.0"
-sqlalchemy2-stubs = "^0.0.2a38"
-isort = "^5.13.2"
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0,<9",
+    "black>=24.1.1,<25",
+    "tox>=4.12.1,<5",
+    "mypy>=1.8.0,<2",
+    "sqlalchemy2-stubs>=0.0.2a38,<0.0.3",
+    "isort>=5.13.2,<6",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [[tool.mypy.overrides]]
 module = [
